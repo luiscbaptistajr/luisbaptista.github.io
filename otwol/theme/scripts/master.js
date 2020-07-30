@@ -26,6 +26,11 @@ var loc = document.location;
 
 (function($) {
 
+	setTimeout(function(){
+        $('body').addClass('loaded');
+		// $('h1').css('color','#222222');
+    }, 5000);
+
 	$.QueryString = (function(a) {
 		if (a === "") return {};
 		var b = {};

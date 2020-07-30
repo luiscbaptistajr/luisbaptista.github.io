@@ -255,76 +255,76 @@ var PSY = (function(){
  		endIndex = 0;
 
  	// FUNCTION FOR ALL LIGHTBOX
- 	function lightboxify() {
-		$('.show-lbox').on('click',function(e){
-			e.preventDefault();
-			var windowHeight 		= $(window).height(),
-				data_post_src 		= $(this).find('img').attr("src"),
-	        	data_post_alt		= $(this).find('img').attr("alt"),
-	        	data_prof_name		= $(this).find('img').attr("data-profname"),
-	        	data_prof_img		= $(this).find('img').attr('data-profimg'),
-	        	data_likes			= $(this).find('img').attr('data-likes'),
-	        	data_text 			= data_post_alt;
+ 	// function lightboxify() {
+	// 	$('.show-lbox').on('click',function(e){
+	// 		e.preventDefault();
+	// 		var windowHeight 		= $(window).height(),
+	// 			data_post_src 		= $(this).find('img').attr("src"),
+	//         	data_post_alt		= $(this).find('img').attr("alt"),
+	//         	data_prof_name		= $(this).find('img').attr("data-profname"),
+	//         	data_prof_img		= $(this).find('img').attr('data-profimg'),
+	//         	data_likes			= $(this).find('img').attr('data-likes'),
+	//         	data_text 			= data_post_alt;
 	        	
-	        // console.log(data_src);
+	//         // console.log(data_src);
 
-    		var img_lightbox = '<div id="popbox">' +
-	          	'<div class="back-overlay"><p class="lightbox-close">x</p></div>' +
-	          	'<div class="content">' +
-	          		'<div class="main-image">'+
-	          			'<img src="' + data_post_src + '" alt="'+ data_post_alt +'" />' + 
+    // 		var img_lightbox = '<div id="popbox">' +
+	//           	'<div class="back-overlay"><p class="lightbox-close">x</p></div>' +
+	//           	'<div class="content">' +
+	//           		'<div class="main-image">'+
+	//           			'<img src="' + data_post_src + '" alt="'+ data_post_alt +'" />' + 
 	          			
-	          		'</div>' +
-	          		'<div class="details">' +
-	          			'<div class="profile">' +
-	          				'<img src="'+data_prof_img+'" alt="'+data_prof_name+'" />' + 
-	          				'<span class="name">"'+data_prof_name+'"</span>' +
-	          				'<p><small class="star-count">'+data_likes+' witnesses</small></p>' +
-	          				'<p class="caption-wrapper">'+ data_text +'</p>' +
-	          			'</div>' +
-	          		'</div>' +	
-	          	'</div>' +
-	        '</div>';
+	//           		'</div>' +
+	//           		'<div class="details">' +
+	//           			'<div class="profile">' +
+	//           				'<img src="'+data_prof_img+'" alt="'+data_prof_name+'" />' + 
+	//           				'<span class="name">"'+data_prof_name+'"</span>' +
+	//           				'<p><small class="star-count">'+data_likes+' witnesses</small></p>' +
+	//           				'<p class="caption-wrapper">'+ data_text +'</p>' +
+	//           			'</div>' +
+	//           		'</div>' +	
+	//           	'</div>' +
+	//         '</div>';
 
-	        $('body').append($(img_lightbox));
-	        // $('#popbox').show();
+	//         $('body').append($(img_lightbox));
+	//         // $('#popbox').show();
 
-			// FADEIN LIGHTBOX
-			if ($(window).width() <= 640) {
-				$('#popbox').show();
-			} else {
-				// if(!$lightboxify.length) return;
-				console.log(lightboxify.length)
-				$('#popbox').fadeIn(function(){
-					var pop_height 		= $('#popbox .content').outerHeight(),
-						pop_width		= $('#popbox .content').width(),
-						left_side		= Math.ceil(($(window).width() - pop_width) / 2),
-						btn_close_pos	= pop_width + left_side,
-						pop_top			= (windowHeight - pop_height) / 2,
-						img_height		= $('.main-image img').height() - 20;
+	// 		// FADEIN LIGHTBOX
+	// 		if ($(window).width() <= 640) {
+	// 			$('#popbox').show();
+	// 		} else {
+	// 			// if(!$lightboxify.length) return;
+	// 			console.log(lightboxify.length)
+	// 			$('#popbox').fadeIn(function(){
+	// 				var pop_height 		= $('#popbox .content').outerHeight(),
+	// 					pop_width		= $('#popbox .content').width(),
+	// 					left_side		= Math.ceil(($(window).width() - pop_width) / 2),
+	// 					btn_close_pos	= pop_width + left_side,
+	// 					pop_top			= (windowHeight - pop_height) / 2,
+	// 					img_height		= $('.main-image img').height() - 20;
 
-					console.log(pop_width, $(window).width(), left_side);
+	// 				console.log(pop_width, $(window).width(), left_side);
 					
-					$('body').css({'overflow':'hidden'});
-					$('#popbox .lightbox-close').css({'left': btn_close_pos + 10});
+	// 				$('body').css({'overflow':'hidden'});
+	// 				$('#popbox .lightbox-close').css({'left': btn_close_pos + 10});
 
-				  	if(windowHeight > pop_height) {
-			  		  	$('#popbox .content, #popbox .lightbox-close').animate({ "top": "+=" + pop_top + "px" }, 600).delay(400);
-				  	} else {
-				  		$('#popbox .content, #popbox .lightbox-close').show();
-				  	}
+	// 			  	if(windowHeight > pop_height) {
+	// 		  		  	$('#popbox .content, #popbox .lightbox-close').animate({ "top": "+=" + pop_top + "px" }, 600).delay(400);
+	// 			  	} else {
+	// 			  		$('#popbox .content, #popbox .lightbox-close').show();
+	// 			  	}
 
-			  		$('#popbox .details').css({'height':img_height, 'overflow-y': 'auto'});
-				});	
-			}
+	// 		  		$('#popbox .details').css({'height':img_height, 'overflow-y': 'auto'});
+	// 			});	
+	// 		}
 			
-			$('.lightbox-close, .back-overlay, .link-close').click(function(e) {
-				e.preventDefault();
-			    closeBox();
-			});
+	// 		$('.lightbox-close, .back-overlay, .link-close').click(function(e) {
+	// 			e.preventDefault();
+	// 		    closeBox();
+	// 		});
 
-		}); 		
- 	}
+	// 	}); 		
+ 	// }
 
  	function closeBox() {
  		$('#popbox').fadeOut(function(){
@@ -378,25 +378,45 @@ var PSY = (function(){
  		var i;
  		for (i = start; i <= end; i++) {
  			// console.log(i);
- 			var thisHTML =  '<li>' +
- 				'<div class="gallery-list-inner">' +
- 					'<div class="information-block">' +
- 						'<span class="icon-promise"><a href="'+pageData.news_feed.posts.post[i].author.url+'"><img src="'+pageData.news_feed.posts.post[i].author.picture_url+'" alt="'+pageData.news_feed.posts.post[i].author.name+'" /></a></span>' +
- 						'<h4 class="promise-title">'+pageData.news_feed.posts.post[i].source.source_name+'</h4>' +
- 						'<p class="couple-name">'+pageData.news_feed.posts.post[i].author.name+'</p>' +
- 					'</div>' +
- 					'<div class="img-couple show-lbox">' +
- 						'<img src="'+pageData.news_feed.posts.post[i].content.content_picture+'" data-likes="'+pageData.news_feed.posts.post[i].likes+'" alt="'+pageData.news_feed.posts.post[i].content.content_body+'" data-profname="'+pageData.news_feed.posts.post[i].author.name+'" data-profimg="'+pageData.news_feed.posts.post[i].author.picture_url+'" />' +
- 					'</div>' +
- 					'<div class="information-bottom-block">' +
- 						'<small class="witness-block flexy center">' +
- 							'<span class="heart"></span>' +
- 							'<span class="count">'+pageData.news_feed.posts.post[i].likes+'</span>' +
- 							'<span class="witness">&nbsp;witnesses</span>' +
- 						'</small>' +	
- 					'</div>' +
- 				'</div>' +
- 			'</li>';
+ 			// var thisHTML =  '<li>' +
+ 			// 	'<div class="gallery-list-inner">' +
+ 			// 		'<div class="information-block">' +
+ 			// 			'<span class="icon-promise"><a href="'+pageData.news_feed.posts.post[i].author.url+'"><img src="'+pageData.news_feed.posts.post[i].author.picture_url+'" alt="'+pageData.news_feed.posts.post[i].author.name+'" /></a></span>' +
+ 			// 			'<h4 class="promise-title">'+pageData.news_feed.posts.post[i].source.source_name+'</h4>' +
+ 			// 			'<p class="couple-name">'+pageData.news_feed.posts.post[i].author.name+'</p>' +
+ 			// 		'</div>' +
+ 			// 		'<div class="img-couple show-lbox">' +
+ 			// 			'<img src="'+pageData.news_feed.posts.post[i].content.content_picture+'" data-likes="'+pageData.news_feed.posts.post[i].likes+'" alt="'+pageData.news_feed.posts.post[i].content.content_body+'" data-profname="'+pageData.news_feed.posts.post[i].author.name+'" data-profimg="'+pageData.news_feed.posts.post[i].author.picture_url+'" />' +
+ 			// 		'</div>' +
+ 			// 		'<div class="information-bottom-block">' +
+ 			// 			'<small class="witness-block flexy center">' +
+ 			// 				'<span class="heart"></span>' +
+ 			// 				'<span class="count">'+pageData.news_feed.posts.post[i].likes+'</span>' +
+ 			// 				'<span class="witness">&nbsp;witnesses</span>' +
+ 			// 			'</small>' +	
+ 			// 		'</div>' +
+ 			// 	'</div>' +
+			// '</li>';
+			 
+			var thisHTML =  '<li>' +
+				'<div class="gallery-list-inner">' +
+					'<div class="information-block">' +
+						'<h4 class="promise-title">'+pageData.news_feed.posts.post[i].source.source_name+'</h4>' +
+						'<p class="couple-name">'+pageData.news_feed.posts.post[i].author.name+'</p>' +
+					'</div>' +
+					'<div class="img-couple show-lbox">' +
+						// '<img src="'+pageData.news_feed.posts.post[i].content.content_picture+'" data-likes="'+pageData.news_feed.posts.post[i].likes+'" alt="'+pageData.news_feed.posts.post[i].content.content_body+'" data-profname="'+pageData.news_feed.posts.post[i].author.name+'" data-profimg="'+pageData.news_feed.posts.post[i].author.picture_url+'" />' +
+						'<p>'+pageData.news_feed.posts.post[i].content.content_body+'</p>'
+					'</div>' +
+					// '<div class="information-bottom-block">' +
+					// 	'<small class="witness-block flexy center">' +
+					// 		'<span class="heart"></span>' +
+					// 		'<span class="count">'+pageData.news_feed.posts.post[i].likes+'</span>' +
+					// 		'<span class="witness">&nbsp;witnesses</span>' +
+					// 	'</small>' +	
+					// '</div>' +
+				'</div>' +
+			'</li>';
 
  			$('.content-gallery ul').append(thisHTML);
  			thisHTML = $('.content-gallery ul li').eq(i);

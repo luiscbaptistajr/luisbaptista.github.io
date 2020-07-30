@@ -593,7 +593,9 @@ header.main .push {
   list-style: none; }
 .content .content-gallery ul li .img-couple {
   height: 240px;
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 0 15px;
+}
 .content .content-gallery ul li .img-couple img {
   display: block;
   height: 100%;
@@ -655,7 +657,8 @@ header.main .push {
   background-color: #ffffff;
   -webkit-box-shadow: 0px 0px 2px 1px #cbcbcb;
   -moz-box-shadow: 0px 0px 2px 1px #cbcbcb;
-  box-shadow: 0px 0px 2px 1px #cbcbcb; }
+  box-shadow: 0px 0px 2px 1px #cbcbcb;
+text-align: center; }
 .content .gallery-list-inner .promise-title {
   margin: 0;
   margin-top: 10px; }

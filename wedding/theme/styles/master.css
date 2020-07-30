@@ -166,8 +166,9 @@ body {
   letter-spacing: 2px; }
 .main .bg-prenup img {
   position: absolute;
-  top: -160px;
-  max-width: 100%; }
+  top: -290px;
+  max-width: 100%;
+width: 100% }
 .main .bg-rsvp {
   height: auto;
   padding: 100px 0 50px;
