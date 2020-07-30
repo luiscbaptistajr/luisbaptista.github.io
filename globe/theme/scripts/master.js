@@ -606,12 +606,12 @@ $(document).ready(function () {
 	    id = id.replace("link", "");
 	      // Scroll
 	    $('html,body').animate({
-	        scrollTop: $("#"+id).offset().top},
+	        scrollTop: $("#"+id).offset().top - 50},
 	        'slow');
 
 	}
 
-	$('.categories-drop > li > a').click(function(e) { 
+	$('.floating-nav-holder > .floating-nav-list > li > a').click(function(e) { 
 	      // Prevent a page reload when a link is pressed
 	    e.preventDefault(); 
 	      // Call the scroll function
