@@ -272,7 +272,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 1024px;
+  max-width: 1280px;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -429,12 +429,13 @@ Full-Width Styles
 .project-teaser-block {
   width: 610px;
   background-color: white;
-  margin: 10px 15px;
+  /* margin: 10px 15px; */
+  margin: 10px 0 10px;
 }
 
-.project-teaser-block:first-child {
+/* .project-teaser-block:first-child {
   margin-top: 0;
-}
+} */
 
 .project-teaser-block .project-teaser__image {
   float: left;
