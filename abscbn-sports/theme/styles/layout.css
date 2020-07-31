@@ -1127,6 +1127,7 @@ footer .grid-block--295x221 {
   display: block;
   max-width: 100%;
   height: auto;
+  width: 100%;
 }
 
 .footer-block {
@@ -1325,6 +1326,7 @@ footer .grid-block--295x221 {
   position: absolute;
   top: 0;
   z-index: 0;
+  width: 100%;
 }
 .featured-block .featured-block__item .item__opacity {
   position: absolute;
@@ -2309,6 +2311,7 @@ footer .grid-block--295x221 {
   display: block;
   max-width: 100%;
   height: auto;
+  width: 100%;
 }
 .grid-block .grid-block__item .item__opacity {
   position: absolute;
